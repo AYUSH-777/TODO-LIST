@@ -1,0 +1,93 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style media="screen">
+    h1{
+      text-align:center;
+    }
+    select{
+      margin-left:685px;
+    }
+    div{
+      background-color:aqua;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>TO--DO LIST</h1>
+
+
+   <div class="">
+
+
+     <select id="mySelect" size="20"></select><br><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <input type="text" name="" value="" placeholder="Write Some Text to Add into the TODO List" size="35" id='in'>
+      <button type="button" name="button"  onclick="hl()">Add in the List</button>
+
+
+   </div>
+
+<p id="demo"></p>
+
+<script>
+  function hl()
+  {
+    var a=document.createElement('option');
+    var c=document.getElementById('in').value;
+    var b=document.createTextNode(c+"");
+    a.appendChild(b);
+    /*var d=document.createElement('button');
+    var e=document.createTextNode("Delete");
+      d.appendChild(e);*/
+    document.getElementById('mySelect').appendChild(a);
+    /*  document.getElementById('option').appendChild(d);*/
+   a.addEventListener('click',(e)=>{
+     e.target.remove();
+   });
+  }
+
+function myFunction() {
+  var a=document.getElementById('out').value;
+  //var c = document.getElementById("mySelect").childNodes[2].text;
+  //document.getElementById("demo").innerHTML = c[2].text;
+//  alert(c);
+  var c1=document.getElementById("mySelect");
+/*  if(c1.hasChildNodes())
+  {
+       alert(c1[0].text);
+       c1.remove(c1.childNodes[0]);
+  }*/
+  var c2=document.getElementById("mySelect").childNodes;
+
+  if(c1.hasChildNodes())
+   {
+     var idx;
+     for(let i=0;i<c2.length;i++)
+     {
+      // alert(c2[i].text);
+       if(c2[i].text==a)
+       {
+         idx=i;
+         break;
+       }
+     }
+     var x=c2[0].text;
+     c2[idx].text=x;
+        c1.remove(c1.childNodes[0]);
+   }
+
+
+}
+</script>
+
+</body>
+</html>
